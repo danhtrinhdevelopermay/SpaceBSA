@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 5%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 13%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 5%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 5%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(220, 100%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(300, 100%, 70%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(260, 100%, 65%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(220, 100%, 60%);
+  --radius: 1rem;
+  
+  /* SpaceBSA modern light theme colors */
+  --primary: hsl(240, 85%, 60%); /* Blue Primary */
+  --secondary: hsl(300, 85%, 65%); /* Pink Secondary */
+  --bg-light: hsl(0, 0%, 100%); /* White Background */
+  --text-dark: hsl(222, 84%, 5%); /* Dark text for light theme */
+  --accent: hsl(190, 85%, 55%); /* Cyan accent */
+  --security: hsl(0, 85%, 60%); /* Red Alert */
+  --surface: hsl(0, 0%, 98%); /* Light Card surface */
+  --surface-hover: hsl(210, 40%, 96%); /* Light Hover state */
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 40%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(122, 39%, 49%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-text-dark;
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Fixed background that doesn't scroll */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('/new-background.png') center/cover no-repeat;
+    background-attachment: fixed;
+    /* GPU optimization */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: auto;
+  }
+
+  /* Custom utility classes for SpaceBSA Light Theme */
+  .bg-bg-light {
+    background: rgba(255, 255, 255, 0.1);
+    /* GPU optimization for background */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Optimize performance for cards and elements with backdrop blur */
+  .backdrop-blur-sm {
+    /* Use GPU acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Performance optimization for animations */
+  .transition-all {
+    /* Limit to transform and opacity for better performance */
+    transition-property: transform, opacity, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Optimize grid layouts for better rendering */
+  .grid {
+    /* Enable GPU compositing */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .text-text-dark {
+    color: hsl(0, 0%, 95%);
+  }
+
+  .text-security {
+    color: hsl(15, 100%, 65%);
+  }
+
+  .bg-security {
+    background-color: hsl(15, 100%, 65%);
+  }
+
+  .bg-surface {
+    background-color: hsl(222, 20%, 12%);
+  }
+
+  .bg-surface-hover {
+    background-color: hsl(222, 20%, 16%);
+  }
+
+  .bg-space-gradient {
+    background: linear-gradient(135deg, 
+      hsl(222, 20%, 12%) 0%, 
+      hsl(240, 30%, 15%) 25%,
+      hsl(260, 40%, 18%) 50%, 
+      hsl(280, 35%, 16%) 75%,
+      hsl(222, 25%, 14%) 100%);
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid hsl(240, 100%, 70%, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .bg-space-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Modern dark sidebar styling */
+  .modern-sidebar {
+    background: linear-gradient(180deg, 
+      hsl(222, 20%, 12%) 0%,
+      hsl(222, 25%, 10%) 100%);
+    border-radius: 2rem;
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(240, 100%, 70%, 0.3);
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 hsl(240, 100%, 70%, 0.2);
+  }
+
+  .text-space-pink {
+    color: hsl(280, 100%, 75%);
+  }
+
+  .bg-space-pink {
+    background-color: hsl(280, 100%, 75%);
+  }
+
+  .text-space-blue {
+    color: hsl(240, 100%, 70%);
+  }
+
+  .text-accent {
+    color: hsl(180, 100%, 60%);
+  }
+
+  /* Light glass morphism effect */
+  .glass-effect {
+    background: linear-gradient(135deg, 
+      hsla(220, 100%, 95%, 0.8) 0%, 
+      hsla(300, 100%, 95%, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsla(220, 100%, 85%, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  /* Enhanced card styling */
+  .enhanced-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 20px 40px -12px rgba(31, 38, 135, 0.3),
+      0 4px 25px 0px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(15px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .enhanced-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  }
+
+  .enhanced-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 30px 60px -12px rgba(31, 38, 135, 0.4),
+      0 18px 36px -18px rgba(0, 0, 0, 0.22);
+  }
+
+  /* Floating button effect */
+  .floating-btn {
+    background: linear-gradient(135deg, hsl(220, 100%, 60%) 0%, hsl(280, 100%, 70%) 50%, hsl(300, 100%, 70%) 100%);
+    border-radius: 2.5rem;
+    box-shadow: 
+      0 12px 30px rgba(88, 101, 242, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .floating-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+  }
+
+  .floating-btn:hover::before {
+    left: 100%;
+  }
+
+  .floating-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 
+      0 20px 40px rgba(88, 101, 242, 0.5),
+      0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Neumorphism effect */
+  .neuro-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 2rem;
+    box-shadow: 
+      20px 20px 40px #d1d1d1,
+      -20px -20px 40px #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .neuro-card:hover {
+    box-shadow: 
+      25px 25px 50px #d1d1d1,
+      -25px -25px 50px #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Gradient border effect */
+  .gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 2rem;
+    padding: 2px;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(135deg, hsl(220, 100%, 60%), hsl(300, 100%, 70%));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+  }
+
+  /* Custom backdrop blur for Dialog overlay */
+  [data-radix-dialog-overlay] {
+    backdrop-filter: blur(12px) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* Enhanced modal styling */
+  [data-radix-dialog-content] {
+    border-radius: 1.5rem !important;
+    max-height: calc(100vh - 30px) !important;
+    max-width: calc(100vw - 30px) !important;
+    margin: 15px auto !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    position: fixed !important;
+    overflow: hidden !important;
+  }
+
+  /* Responsive modal sizing */
+  @media (min-width: 640px) {
+    [data-radix-dialog-content] {
+      margin: 15px !important;
+    }
+  }
+
+  /* Modal content scrolling */
+  .modal-content-scroll {
+    max-height: calc(90vh - 8rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+  }
+
+  .modal-content-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .modal-content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .modal-content-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.3);
+    border-radius: 3px;
+  }
+
+  .modal-content-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(156, 163, 175, 0.5);
+  }
+
+  /* Glass morphism effect for modals */
+  .glass-modal {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 1.5rem;
+  }
+
+  /* Enhanced modal container with glass effect */
+  .modal-glass-container {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.95) 0%, 
+      rgba(255, 255, 255, 0.85) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+}

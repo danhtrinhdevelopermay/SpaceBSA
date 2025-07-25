@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Share System</title>
+</head>
+<body>
+    <h1>Test File Sharing System</h1>
+    
+    <div>
+        <h2>Create Test Share Request</h2>
+        <button onclick="createTestShare()">Create Test Share Request</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        async function createTestShare() {
+            try {
+                // Test share data
+                const shareData = {
+                    fileId: "9ac4f6e0-bb54-466c-bc67-56a8d5e451e5", // Sample file ID
+                    sharedBy: 2,
+                    sharedWith: "test@example.com",
+                    permission: "view"
+                };
+
+                const response = await fetch('/api/files/share', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(shareData)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    document.getElementById('result').innerHTML = 
+                        `Share created successfully! Share ID: ${result.share.id}`;
+                } else {
+                    const error = await response.json();
+                    document.getElementById('result').innerHTML = 
+                        `Error: ${error.error}`;
+                }
+            } catch (error) {
+                document.getElementById('result').innerHTML = 
+                    `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

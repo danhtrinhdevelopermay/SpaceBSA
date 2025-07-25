@@ -1,0 +1,35 @@
+User-agent: *
+
+# Allow access to public pages
+Allow: /
+Allow: /auth
+Allow: /infrastructure
+
+# Disallow access to private/authenticated pages
+Disallow: /dashboard
+Disallow: /shared
+Disallow: /recent
+Disallow: /starred
+Disallow: /category/
+Disallow: /trash
+Disallow: /settings
+Disallow: /profile
+Disallow: /file/
+Disallow: /system/
+Disallow: /demo/
+Disallow: /share/
+
+# Disallow access to API endpoints
+Disallow: /api/
+
+# Allow access to static assets
+Allow: /assets/
+Allow: /logo.png
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://spacebsa.replit.app/sitemap.xml
+
+# Crawl delay (be nice to the server)
+Crawl-delay: 1

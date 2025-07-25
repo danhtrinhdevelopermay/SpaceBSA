@@ -1,0 +1,251 @@
+.loading-pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.pet-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.pet-container {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: petBob 2s ease-in-out infinite;
+}
+
+.cat-body {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.cat-head {
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  border-radius: 50% 50% 45% 45%;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
+  animation: headTilt 3s ease-in-out infinite;
+}
+
+.cat-ear {
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  border-radius: 50% 50% 0 50%;
+  position: absolute;
+  top: -8px;
+  animation: earWiggle 2s ease-in-out infinite;
+}
+
+.cat-ear-left {
+  left: 12px;
+  transform: rotate(-25deg);
+  animation-delay: 0.1s;
+}
+
+.cat-ear-right {
+  right: 12px;
+  transform: rotate(25deg);
+  animation-delay: 0.3s;
+}
+
+.cat-eyes {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-top: 15px;
+}
+
+.cat-eye {
+  width: 8px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  position: relative;
+  animation: blink 3s ease-in-out infinite;
+}
+
+.cat-pupil {
+  width: 4px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  animation: eyeMove 2s ease-in-out infinite;
+}
+
+.cat-nose {
+  width: 4px;
+  height: 3px;
+  background: #ff6b9d;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translateX(-50%);
+}
+
+.cat-mouth {
+  width: 10px;
+  height: 6px;
+  border: 2px solid #ff6b9d;
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  left: 50%;
+  top: 32px;
+  transform: translateX(-50%);
+}
+
+.cat-torso {
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  border-radius: 45%;
+  margin: 5px auto;
+  box-shadow: 0 3px 10px rgba(255, 154, 158, 0.3);
+  animation: bodyBreathe 2s ease-in-out infinite;
+}
+
+.cat-leg {
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(180deg, #ff9a9e 0%, #fad0c4 100%);
+  border-radius: 50%;
+  position: absolute;
+  animation: legMove 1.5s ease-in-out infinite;
+}
+
+.cat-leg-1 {
+  top: 75px;
+  left: 15px;
+  animation-delay: 0s;
+}
+
+.cat-leg-2 {
+  top: 75px;
+  right: 15px;
+  animation-delay: 0.75s;
+}
+
+.cat-leg-3 {
+  top: 75px;
+  left: 25px;
+  animation-delay: 0.375s;
+}
+
+.cat-leg-4 {
+  top: 75px;
+  right: 25px;
+  animation-delay: 1.125s;
+}
+
+.cat-tail {
+  width: 6px;
+  height: 30px;
+  background: linear-gradient(180deg, #ff9a9e 0%, #fad0c4 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  right: -15px;
+  transform-origin: top center;
+  animation: tailWag 1s ease-in-out infinite;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.dot-1 { animation-delay: -0.32s; }
+.dot-2 { animation-delay: -0.16s; }
+.dot-3 { animation-delay: 0s; }
+
+.loading-message {
+  text-align: center;
+}
+
+.loading-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.loading-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Animations */
+@keyframes petBob {
+  0%, 100% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-10px) rotateY(5deg); }
+}
+
+@keyframes headTilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+@keyframes earWiggle {
+  0%, 100% { transform: rotate(-25deg) scale(1); }
+  50% { transform: rotate(-20deg) scale(1.1); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { height: 12px; }
+  95% { height: 2px; }
+}
+
+@keyframes eyeMove {
+  0%, 100% { transform: translate(2px, 2px); }
+  25% { transform: translate(1px, 3px); }
+  50% { transform: translate(3px, 2px); }
+  75% { transform: translate(2px, 1px); }
+}
+
+@keyframes bodyBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes legMove {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(5deg); }
+}
+
+@keyframes tailWag {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

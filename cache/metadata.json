@@ -1,0 +1,126 @@
+{
+  "cacheMap": [
+    [
+      "48906bde-3db2-42a0-999c-f60d2cae85d3",
+      {
+        "filePath": "/home/runner/workspace/cache/48906bde-3db2-42a0-999c-f60d2cae85d3_1753338951686",
+        "cachedAt": "2025-07-24T06:35:51.689Z",
+        "accessCount": 35,
+        "lastAccessed": "2025-07-24T14:17:08.033Z",
+        "fileSize": 0.41556453704833984
+      }
+    ],
+    [
+      "4b79dca2-684b-4ba4-9252-0aacd8e69930",
+      {
+        "filePath": "/home/runner/workspace/cache/4b79dca2-684b-4ba4-9252-0aacd8e69930_1753351258929",
+        "cachedAt": "2025-07-24T10:00:58.930Z",
+        "accessCount": 36,
+        "lastAccessed": "2025-07-24T15:34:39.143Z",
+        "fileSize": 0.8392848968505859
+      }
+    ],
+    [
+      "dc27ec31-af40-4780-aaa4-85c05cc433b5",
+      {
+        "filePath": "/home/runner/workspace/cache/dc27ec31-af40-4780-aaa4-85c05cc433b5_1753351273535",
+        "cachedAt": "2025-07-24T10:01:13.537Z",
+        "accessCount": 26,
+        "lastAccessed": "2025-07-24T15:28:27.578Z",
+        "fileSize": 0.41556453704833984
+      }
+    ],
+    [
+      "8aef4a73-d16e-4a67-9115-54c2b971e432",
+      {
+        "filePath": "/home/runner/workspace/cache/8aef4a73-d16e-4a67-9115-54c2b971e432_1753351273594",
+        "cachedAt": "2025-07-24T10:01:13.595Z",
+        "accessCount": 26,
+        "lastAccessed": "2025-07-24T15:28:27.586Z",
+        "fileSize": 0.2353992462158203
+      }
+    ],
+    [
+      "b75c69f0-73e1-4746-b899-b7b64b781874",
+      {
+        "filePath": "/home/runner/workspace/cache/b75c69f0-73e1-4746-b899-b7b64b781874_1753352459381",
+        "cachedAt": "2025-07-24T10:20:59.382Z",
+        "accessCount": 15,
+        "lastAccessed": "2025-07-24T15:28:27.494Z",
+        "fileSize": 0.8392848968505859
+      }
+    ],
+    [
+      "ca939933-2bb0-4e4b-971f-ba18038d57b3",
+      {
+        "filePath": "/home/runner/workspace/cache/ca939933-2bb0-4e4b-971f-ba18038d57b3_1753367028114",
+        "cachedAt": "2025-07-24T14:23:48.115Z",
+        "accessCount": 4,
+        "lastAccessed": "2025-07-24T15:34:39.151Z",
+        "fileSize": 0.8392848968505859
+      }
+    ],
+    [
+      "1432c536-66e5-4210-a96f-22b1c3516d4e",
+      {
+        "filePath": "/home/runner/workspace/cache/1432c536-66e5-4210-a96f-22b1c3516d4e_1753369733409",
+        "cachedAt": "2025-07-24T15:08:53.412Z",
+        "accessCount": 13,
+        "lastAccessed": "2025-07-25T05:14:51.034Z",
+        "fileSize": 0.5564403533935547
+      }
+    ],
+    [
+      "c03bbe31-ad00-4dc8-9117-a08daa7f448e",
+      {
+        "filePath": "/home/runner/workspace/cache/c03bbe31-ad00-4dc8-9117-a08daa7f448e_1753370562253",
+        "cachedAt": "2025-07-24T15:22:42.255Z",
+        "accessCount": 36,
+        "lastAccessed": "2025-07-25T05:21:05.069Z",
+        "fileSize": 0.41556453704833984
+      }
+    ],
+    [
+      "7f76a028-bf6f-4462-8603-ef530c70c871",
+      {
+        "filePath": "/home/runner/workspace/cache/7f76a028-bf6f-4462-8603-ef530c70c871_1753374965384",
+        "cachedAt": "2025-07-24T16:36:05.385Z",
+        "accessCount": 18,
+        "lastAccessed": "2025-07-25T05:21:06.432Z",
+        "fileSize": 0.4631662368774414
+      }
+    ],
+    [
+      "75875a55-6c8e-4741-a5f2-1e30abe2a72f",
+      {
+        "filePath": "/home/runner/workspace/cache/75875a55-6c8e-4741-a5f2-1e30abe2a72f_1753375304665",
+        "cachedAt": "2025-07-24T16:41:44.665Z",
+        "accessCount": 16,
+        "lastAccessed": "2025-07-25T05:21:05.067Z",
+        "fileSize": 0.047275543212890625
+      }
+    ],
+    [
+      "30354997-20cc-4e29-9d74-3b38b6527d10",
+      {
+        "filePath": "/home/runner/workspace/cache/30354997-20cc-4e29-9d74-3b38b6527d10_1753375530334",
+        "cachedAt": "2025-07-24T16:45:30.336Z",
+        "accessCount": 11,
+        "lastAccessed": "2025-07-25T05:14:53.093Z",
+        "fileSize": 0.21985816955566406
+      }
+    ],
+    [
+      "aa528bce-511f-4c3b-9552-4564fb132eb8",
+      {
+        "filePath": "/home/runner/workspace/cache/aa528bce-511f-4c3b-9552-4564fb132eb8_1753375917003",
+        "cachedAt": "2025-07-24T16:51:57.004Z",
+        "accessCount": 7,
+        "lastAccessed": "2025-07-25T05:14:52.406Z",
+        "fileSize": 0.683232307434082
+      }
+    ]
+  ],
+  "currentCacheSize": 5.9699201583862305,
+  "lastUpdated": "2025-07-25T05:21:06.432Z"
+}
